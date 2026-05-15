@@ -133,7 +133,7 @@ async function obtenerRespuestaIA(mensaje){
         content: mensaje
     });
 
-    const res = await fetch("http://localhost:3000/chat", {
+    const res = await fetch("http://192.168.1.135/chat", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

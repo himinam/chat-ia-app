@@ -1,4 +1,5 @@
 require('dotenv').config();
+const API_KEY = process.env.OPENROUTER_API_KEY;
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
@@ -47,6 +48,8 @@ app.post("/chat", async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log("🚀 Servidor PRO en http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log("🚀 Servidor iniciado");
 });
