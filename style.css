@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #e2e8f0;
+    height: 100vh;
+    display: flex;
+}
+
+/* APP */
+.app {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: #111827;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-right: 1px solid #1f2937;
+}
+
+.sidebar h2 {
+    color: #60a5fa;
+}
+
+.nuevo-chat {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nuevo-chat:hover {
+    background: #1d4ed8;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #1f2937;
+    background: #0b1220;
+}
+
+/* CHAT */
+.chat {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* MENSAJES */
+.mensaje {
+    max-width: 70%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    line-height: 1.4;
+    font-size: 14px;
+    animation: fadeIn 0.2s ease-in;
+}
+
+.usuario {
+    align-self: flex-end;
+    background: #2563eb;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.ia {
+    align-self: flex-start;
+    background: #1f2937;
+    color: #e5e7eb;
+    border-bottom-left-radius: 4px;
+}
+
+/* INPUT AREA */
+.input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #1f2937;
+    background: #0b1220;
+    gap: 10px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #1f2937;
+    background: #111827;
+    color: white;
+    outline: none;
+}
+
+.input-area button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.input-area button:hover {
+    background: #16a34a;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#typing {
+    opacity: 0.7;
+    font-style: italic;
+}
+
+#typing::after {
+    content: " ●●●";
+    animation: dots 1s infinite;
+}
+
+@keyframes dots {
+    0% { content: " ●"; }
+    50% { content: " ●●"; }
+    100% { content: " ●●●"; }
+}
